@@ -1,0 +1,161 @@
+/* General styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .content-container {
+    background: white;
+    width: 400px;
+    height: 300px;
+    padding: 20px;
+    border-radius: 40px;
+    box-shadow: -19px 26px 129px -73px rgba(0, 0, 0, 0.75);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease-in-out;
+
+  }
+
+  .content-container:hover {
+    transform: scale(1.05);
+}
+  
+  .logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .dynamic-text {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInOut 6s infinite;
+  }
+  
+  button {
+    background: transparent;
+    position: relative;
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid rgb(0, 119, 181);
+    border-radius: 25px;
+    outline: none;
+    overflow: hidden;
+    color: rgb(0, 119, 181);
+    transition: color 0.3s 0.1s ease-out;
+  }
+  
+  button span {
+    margin: 10px;
+  }
+  
+  button::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    content: "";
+    border-radius: 50%;
+    display: block;
+    width: 20em;
+    height: 20em;
+    left: -5em;
+    text-align: center;
+    transition: box-shadow 0.5s ease-out;
+    z-index: -1;
+  }
+  
+  button:hover {
+    color: #fff;
+    border: 1px solid rgb(0, 119, 181);
+  }
+  
+  button:hover::before {
+    box-shadow: inset 0 0 0 10em rgb(0, 119, 181);
+  }
+  
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 1;
+    }
+    60% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+
+
+/* Media Queries para responsive design */
+@media (max-width: 768px) {
+    .content-container {
+      width: 95%;
+      padding: 15px;
+      border-radius: 20px;
+    }
+  
+    .logo {
+      width: 70px;
+      margin-bottom: 15px;
+    }
+  
+    .dynamic-text {
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+  
+    button {
+      font-size: 0.9rem;
+      padding: 8px 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .content-container {
+      width: 90%;
+      padding: 10px;
+      border-radius: 15px;
+    }
+  
+    .logo {
+      width: 60px;
+      margin-bottom: 10px;
+    }
+  
+    .dynamic-text {
+      font-size: 0.8rem;
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+  
+    button {
+      font-size: 0.8rem;
+      padding: 5px 10px;
+    }
+  }
