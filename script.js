@@ -12,7 +12,7 @@ const texts = [
       textElement.textContent = texts[currentIndex];
       textElement.style.opacity = "1";
       currentIndex = (currentIndex + 1) % texts.length;
-    }, 200); // Sync with fade-out timing
+    }, 100); // Sync with fade-out timing
   }
   
   setInterval(updateText, 3000);
